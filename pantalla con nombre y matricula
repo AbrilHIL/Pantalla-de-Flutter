@@ -1,0 +1,60 @@
+flutter create tarae1flutter
+cd tarae1flutter
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MiApp());
+}
+
+class MiApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Datos Personales',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Mi Información'),
+        ),
+        body: Center(
+          child: DatosPersonales(),
+        ),
+      ),
+    );
+  }
+}
+
+class DatosPersonales extends StatelessWidget {
+  final String nombre = 'Abril Hilario García';
+  final String numero = '23-0087';
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.person, size: 80, color: Colors.blueAccent),
+        SizedBox(height: 20),
+        Text(
+          'Nombre:',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          nombre,
+          style: TextStyle(fontSize: 22),
+        ),
+        SizedBox(height: 20),
+        Text(
+          'Matrícula:',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          numero,
+          style: TextStyle(fontSize: 22),
+        ),
+      ],
+    );
+  }
+}
+
+
